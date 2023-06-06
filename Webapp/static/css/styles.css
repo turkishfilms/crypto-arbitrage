@@ -1,0 +1,160 @@
+:root {
+    --color1: #0D0117;
+    --color2: #ffffff;
+    --color3: #1E81E9;
+    --color4: #53027B;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-image: url("background.jpg");
+    background-color: var(--color1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    color: var(--color2);
+    margin: 10px;
+    padding: 0;
+    text-align: center;
+}
+
+h.title {
+    font-size: 34px;
+    color: var(--color2);
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+div.topBar {
+    background-color: var(--color1);
+    padding: 20px;
+    color: var(--color1);
+}
+
+div.navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--color3);
+    margin-top: 0;
+    height: 100px;
+}
+
+div.navBarLink {
+    float: left;
+}
+
+div.navBarLink a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 30px;
+    font-size: 36px;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+div.navBarLink a:hover {
+    background-color: var(--color1);
+}
+
+div.arbitrageOps {
+    padding: 20px;
+}
+
+table {
+    font-family: 'Nunito', sans-serif;
+    border-spacing: 10px;
+    border-collapse: collapse;
+    background: var(--color3);
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    margin: 15px auto;
+    position: relative;
+    text-align: center;
+}
+
+table td,
+table th {
+    padding: 8px;
+    font-size: 26px;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
+table td {
+    text-align: center;
+}
+
+table th {
+    text-align: center;
+}
+table thead tr {
+    font-family: 'Nunito', sans-serif;
+    height: 60px;
+    background: var(--color3);
+    font-size: 24px;
+    text-align: center;
+}
+
+table tbody tr {
+    font-size: 24px;
+    height: 40px;
+    border-bottom: 1px solid #E3F1D5;
+    text-align: center;
+}
+
+table tbody tr:last-child {
+    border: 0;
+}
+
+
+
+table td.c,
+table th.c {
+    text-align: center;
+}
+
+table td.r {
+    text-align: center;
+}
+
+.footer {
+    background-color: transparent;
+    color: var(--color2);
+    text-align: center;
+    padding: 80px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.mainText {
+    color: #ffffff;
+    margin: 20px 75px;
+    font-family: Nunito, sans-serif;
+    font-size: 22px;
+}
+
+.question {
+    margin: 40px;
+}
+
+h.heading {
+    margin-top: 20px;
+    margin: 20px;
+    padding: 20px;
+    font-size: 28px;
+    }
+
+::selection {
+    background-color: black;
+    color: var(--color2);
+}

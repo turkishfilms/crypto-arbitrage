@@ -1,0 +1,6 @@
+coinlayer_api_key = "9d86b497a3fa7cade4d489127a4c9d3b"
+coinlayer_api_key2 = "621d08fd8bec7cb627dfe09724218521"
+api_key = "QM5mZcEesFiqGaNmRJmG7MWGSQuzjsreUVkTdRirhqt5kGRPh7INiKCDEfhEDPhR"
+secret_key = "oEDl42j3B47boNWMZorXfepfoz1ugzSes42tpUtQtzNPFRIkRU6gPdfwrQFcEfpq"
+new_key = "oof"
+livecoin_key= "132dd307-590c-4ca0-a4e5-d09e74fb3b82"

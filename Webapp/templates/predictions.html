@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Predictions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+</head>
+
+<body>
+    <div class="topBar">
+        <div class="navBar">
+            <div class="navBarLink"><a href="/">HOME</a></div>
+            <div class="navBarLink"><a href="/predictions">PREDICTIONS</a></div>
+            <div class="navBarLink"><a href="/learn">LEARN</a></div>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="my-4 text-center">CRYPTO PREDICTIONS</h1>
+        
+    </div>
+    <table>
+        <h class="title">AI PREDICTIONS</title>
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>COIN</th>
+                        <th>YESTERDAY</th>
+                        <th>NOW</th>
+                        <th>AI PREDICTION</th>
+                        <th>DIRECTION</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <script>
+                const fillPredTableData = (data) => {
+                    const {
+                        yesterday_data: yesterday,
+                        current_data: current,
+                        pred_data: preds
+                    } = data
+                    const table = document.getElementById('table')
+                    for(pred in preds){
+                        const row = table.insertRow(-1)
+                        const cur = current.Binance[pred]
+                        const prediction = preds[pred]
+                        const direction = cur - prediction >= 0 ? "-" : "+"
+                        row.insertCell(0).textContent = pred
+                        row.insertCell(1).textContent = yesterday[pred].Close
+                        row.insertCell(2).textContent = cur
+                        row.insertCell(3).textContent = prediction
+                        row.insertCell(4).textContent = direction
+                        row.insertCell(5).textContent = direction == "+" ? "BUY" : "SELL"
+                    }
+                }
+                const dataRaw = '{{data|safe}}'
+                const data = JSON.parse(dataRaw)
+                
+                fillPredTableData(data)
+            </script>
+</body>
+
+</html>
