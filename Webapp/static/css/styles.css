@@ -29,6 +29,11 @@ h.title {
     padding: 10px;
 }
 
+a{
+    text-decoration: none;
+    color:white;
+}
+
 div.topBar {
     background-color: var(--color1);
     padding: 20px;

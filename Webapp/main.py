@@ -160,7 +160,7 @@ def get_data_on_delay():
 
 @app.route('/')
 def home():
-   return render_template('index2.html',data=main_data["ops"])
+   return render_template('index.html',data=main_data["ops"])
 
 @app.route('/learn')
 def a():
