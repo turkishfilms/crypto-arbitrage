@@ -6,6 +6,8 @@
 # find a way to icorporporate training models
 # ryan reynolds pic
 # "better" learning section??
+# add links to arbitrage page entries. one for each market and one for the coin
+# turn opportuntiy function entries into objects with links when applicable
 
 # %%
 import json 
@@ -27,11 +29,18 @@ from api_scripts.coin_layer import get_coinlayer_prices, get_coinlayer_prices_ye
 
 # %%
 
+def getCoinLink(item):
+    return links["coin"][item]
+
+
+def getMarketLink(item):
+    return links["market"][item]
+
 def opportunity(seller_market,buy_price,buyer_market,sell_price,coin):
-    return{"coin":coin,
-    "sellerMarket":seller_market,
+    return{"coin":{"name":coin,"link":getCoinLink(coin)},
+    "sellerMarket":{"name":seller_market,"link":getMarketLink(seller_market)},
     "buyPrice":buy_price,
-    "buyerMarket":buyer_market,
+    "buyerMarket":{"name":buyer_market,"link":getMarketLink(buyer_market)},
     "sellPrice":sell_price }
     
 
@@ -106,6 +115,22 @@ markets = {
         "Binance" : get_binance_prices,
         "Livecoin" : get_livecoin_prices
     }
+links = {
+    "coin":{
+        "BTC": "https://coinmarketcap.com/currencies/bitcoin/",
+        "LTC": "https://coinmarketcap.com/currencies/litecoin/",
+        "ETH": "https://coinmarketcap.com/currencies/ethereum/",
+        "ADA": "https://coinmarketcap.com/currencies/cardano/",
+        "USDT": "https://coinmarketcap.com/currencies/tether/",
+    },
+    "market":{
+        "CoinGecko" : "https://www.coingecko.com/",
+        "CoinLayer" : "https://coinlayer.com/",
+        "Binance" : "https://www.binance.com/en",
+        "Livecoin" : "https://www.livecoinwatch.com/",
+        }
+    }
+
 
 models = retrieveModels()   
 
@@ -135,7 +160,7 @@ def get_data_on_delay():
 
 @app.route('/')
 def home():
-   return render_template('index.html',data=main_data["ops"])
+   return render_template('index2.html',data=main_data["ops"])
 
 @app.route('/learn')
 def a():
@@ -149,5 +174,4 @@ if(__name__ == "__main__"):
     t = threading.Thread(target=get_data_on_delay)
     t.start()
     app.run()
-
 
